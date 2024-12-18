@@ -1,28 +1,13 @@
-const mysql2 = require('mysql2/promise'); // Use promise-based version
+const mysql2 = require("mysql2/promise"); // Promise-based MySQL
 
 // Database connection
 const dbConnection = mysql2.createPool({
   user: process.env.USER,
-  database:process.env.DATABASE , 
-  host: "localhost",
-  password: process.env.PASSWORD,  
-  connectionLimit: 10
+  database: process.env.DATABASE,
+  host: "localhost", // Change to 127.0.0.1 if localhost doesn't work
+  password: process.env.PASSWORD,
+  connectionLimit: 10, // Max number of connections in the pool
 });
-console.log(process.env.JWT_SECRET)
 
-
-
-
-// Test the connection
-// async function testConnection() {
-//   try {
-//     const [result] = await dbConnection.query("SELECT 'test'");
-//     console.log(result);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// }
-
-// testConnection();
-
-module.exports = dbConnection; // Ensure you export the connection pool
+// Export the connection pool
+module.exports = dbConnection;
