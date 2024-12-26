@@ -1,4 +1,4 @@
 # task-mangement
-frontend-framework ---- react.js
-backend-framework ---- node.js
-planned framework which used to manage state---- redux
+Frontend-framework ---- react.js
+Backend-framework ---- node.js
+Planned framework which used to manage state---- redux
